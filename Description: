@@ -1,0 +1,36 @@
+Description:
+    This script can be used to investigate IP addressess that have been gathered as part of any investigation.
+    Often investigators gather a list of IP Addresses that have been used in the attack.
+    This script is designed to help the investigators to invetigate these IP addresses quickly.
+    Functionality:
+    The scripts performs the following functions:
+    1. Extract information about location of the IP Address
+    2. Plot the IP Address on a Map using Google API
+    3. Check if the IP Address is a Tor Node
+    4. Check the ASN detils of the IP Address
+
+Input:
+    Script takes a text file as input, Each line should have one IP Address to be examined. Ips.txt is provided with the script as an example
+
+Output:
+    The script genrates the following output in the folder passed on as -p (output directory)
+    1. CSV File with Following details for the IP Address:
+    2. An Image with the IP address plotted on a map (Using Google API)
+    3. Open a web-browser with the map image
+
+Dependencies:
+    1. GeoIP Database
+    The script uses a free data base povided by maxmind for IP lookup. The database can be downloaded from
+    http://dev.maxmind.com/geoip/geoip2/geolite2/.
+    Download the GeoLite2-City.mmdb from the link for this python to work correctly.
+
+    Disclaimer:
+    This product includes GeoLite2 data created by MaxMind, available from http://www.maxmind.com
+    
+    2. This python script uses Google API to plot the ip address on a world map image. Pleae add your key in the script at googleApiKey = "Add Your Key here". If you create your API you would also need to enable it
+    https://console.developers.google.com/projectselector/apis/api/static_maps_backend
+    You can request a Google APi Key from Credentials link at https://developers.google.com/api-client-library/python/guide/aaa_apikeys
+    URL length Restriction for Google Static Maps API is 8192 characters in size and maximum of 2500 requests.
+    
+    3. GeoIP2.database module: This script requires python module geoip2.database to work. This module can be installed using pip utility.
+    $ pip install geoip2
