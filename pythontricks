@@ -1,0 +1,4 @@
+#To find time of files in a folder
+
+for x in glob.glob('*.py'):
+...     print(time.strftime( '%Y-%m-%d %H:%M:%S', time.localtime((os.stat('Hunt.py').st_mtime))), x)
