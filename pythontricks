@@ -2,3 +2,10 @@
 
 for x in glob.glob('*.py'):
 ...     print(time.strftime( '%Y-%m-%d %H:%M:%S', time.localtime((os.stat('Hunt.py').st_mtime))), x)
+
+
+#Clear Screen in Python Interpreter
+>>>import os
+>>>os.system('clear')
+OR
+>>>os.system('cls')
